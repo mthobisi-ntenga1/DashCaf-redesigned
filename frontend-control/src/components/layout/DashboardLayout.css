@@ -1,0 +1,100 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  padding: 24px 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.logo-text {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+}
+.logo-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-link {
+  display: block;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  transition: background 0.15s, color 0.15s;
+  border-left: 3px solid transparent;
+}
+.nav-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+}
+.nav-link.active {
+  background: rgba(245,166,35,0.15);
+  color: var(--white);
+  border-left-color: var(--orange);
+}
+
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sidebar-user { display: flex; flex-direction: column; gap: 2px; }
+.user-name { font-size: 14px; font-weight: 600; color: var(--white); }
+.user-role { font-size: 12px; color: var(--orange); }
+
+.sidebar-footer .btn-outline {
+  border-color: rgba(255,255,255,0.4);
+  color: var(--white);
+}
+.sidebar-footer .btn-outline:hover { border-color: var(--white); }
+
+.main-content {
+  flex: 1;
+  margin-left: 240px;
+  padding: 32px;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .main-content { margin-left: 0; padding: 16px; }
+  .sidebar-nav { flex-direction: row; flex-wrap: wrap; padding: 8px; }
+  .nav-link { padding: 8px 12px; border-left: none; border-bottom: 3px solid transparent; }
+  .nav-link.active { border-left: none; border-bottom-color: var(--orange); }
+}

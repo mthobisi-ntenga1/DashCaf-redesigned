@@ -1,0 +1,4 @@
+Contact: mailto:security@dashcaf.co.za
+Preferred-Languages: en
+Policy: https://dashcaf.co.za/security-policy
+Expires: 2027-01-01T00:00:00.000Z
